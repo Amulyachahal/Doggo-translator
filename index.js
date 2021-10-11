@@ -15,7 +15,12 @@ let clickHandler = () => {
       console.log(data);
       let interpretedData = data.contents.translated;
       output.innerText = interpretedData;
-    });
+    })
+    .catch(errorHandler);
 };
+function errorHandler(error) {
+  console.log("Error occured - ", error);
+  alert("Server Error, Please try again after sometime ^.^");
+}
 
 button.addEventListener("click", clickHandler);
